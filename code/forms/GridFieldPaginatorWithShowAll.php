@@ -35,7 +35,6 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 
 		$dataList = parent::getManipulatedData($gridField, $dataList);		
 		$showAllMode =$this->getShowAllMode();
-
 		if($showAllMode){
 			$dataList->limit(999, 0); 
 			$component = $gridField->getConfig()->getComponentByType('GridFieldPaginatorWithShowAll');
@@ -47,12 +46,17 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 
 	protected function setShowAllMode(GridField $gridField){
 		$state =$gridField->State->GridFieldShowAll;
+
 		$sessionMode = Session::get("GridField.PaginatorWithShowAll.Mode");
 		if(isset($sessionMode)){
 			if(is_bool($state->showAllMode)) {
 				if($sessionMode != $state->showAllMode){
 					Session::set("GridField.PaginatorWithShowAll.Mode",$state->showAllMode);
 				}
+			}
+		}else{
+			if(is_bool($state->showAllMode)) {
+				Session::set("GridField.PaginatorWithShowAll.Mode",$state->showAllMode);
 			}
 		}
 	}
