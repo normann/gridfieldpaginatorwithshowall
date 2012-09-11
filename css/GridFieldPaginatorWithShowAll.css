@@ -1,0 +1,18 @@
+.cms table.ss-gridfield-table tfoot tr td.paginator.extra{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    position: relative;
+}
+
+	.cms table.ss-gridfield-table tfoot tr td div.gridfield-pagination-showall{
+		width: 250px;
+		display: inline-block;
+		line-height: 28px;
+		color: #FFFFFF;
+		font-size: 120%;
+	}
+
+	.cms table.ss-gridfield-table tfoot tr td div.datagrid-pagination {
+		display: inline-block;
+		line-height: 28px;
+	}
