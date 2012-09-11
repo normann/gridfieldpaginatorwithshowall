@@ -4,8 +4,6 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 
 	protected $itemClass = 'GridFieldPaginatorWithShowAll_Row';
 
-	protected $affectGlobally = true;
-
 	public function getTemplateData($gridField){
 		$data = parent::getTemplateData($gridField);
 
@@ -49,36 +47,18 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 
 	protected function setShowAllMode(GridField $gridField){
 		$state =$gridField->State->GridFieldShowAll;
-		if($this->getAffectGlobally()){
-			$sessionMode = Session::get("GridField.PaginatorWithShowAll.Mode");
-			if(isset($sessionMode)){
-				if(is_bool($state->showAllMode)) {
-					if($sessionMode != $state->showAllMode){
-						Session::set("GridField.PaginatorWithShowAll.Mode",$state->showAllMode);
-					}
+		$sessionMode = Session::get("GridField.PaginatorWithShowAll.Mode");
+		if(isset($sessionMode)){
+			if(is_bool($state->showAllMode)) {
+				if($sessionMode != $state->showAllMode){
+					Session::set("GridField.PaginatorWithShowAll.Mode",$state->showAllMode);
 				}
 			}
-		}else{
-			/*if(!is_bool($state->showAllMode)) {
-				$state->showAllMode = false;
-			}*/
 		}
 	}
 
 	protected function getShowAllMode(){
-		if($this->getAffectGlobally()){
-			$sessionMode = Session::get("GridField.PaginatorWithShowAll.Mode");
-			return isset($sessionMode) && $sessionMode;
-		}
+		$sessionMode = Session::get("GridField.PaginatorWithShowAll.Mode");
+		return isset($sessionMode) && $sessionMode;
 	}
-
-	public function setAffectGlobally($bool) {
-		$this->affectGlobally = $bool;
-		return $this;
-	}
-
-	public function getAffectGlobally() {
-		return $this->affectGlobally;
-	}
-
 }
