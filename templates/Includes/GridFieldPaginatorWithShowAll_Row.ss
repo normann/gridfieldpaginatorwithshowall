@@ -1,7 +1,7 @@
 <tr>
 	<td class="bottom-all paginator extra" colspan="$Colspan">
 		<div class="gridfield-pagination-showall">
-			<input type="checkbox" id="{$ID}_ShowAllSwitch" value="1" $Checked/> <label for="{$ID}_ShowAllSwitch"><%t GridFieldPaginatorWithShowAll.SHOWALL "Show all" %></label>
+			<input type="checkbox" id="{$ID}_ShowAllSwitch" value="1" $Checked/> <label for="{$ID}_ShowAllSwitch"><% _t('GridFieldPaginatorWithShowAll.SHOWALL', 'Show all') %></label>
 		</div>
 		<% if $OnlyOnePage %>
 		<% else %>
