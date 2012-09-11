@@ -10,8 +10,8 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 		$data = parent::getTemplateData($gridField);
 
 		//Inject Requirements
-		Requirements::css('paginatorwithshowall/css/GridFieldPaginatorWithShowAll.css');
-		Requirements::javascript('paginatorwithshowall/javascript/GridFieldPaginatorWithShowAll.js');
+		Requirements::css('gridfieldpaginatorwithshowall/css/GridFieldPaginatorWithShowAll.css');
+		Requirements::javascript('gridfieldpaginatorwithshowall/javascript/GridFieldPaginatorWithShowAll.js');
 
 		if(is_a($data, "ArrayData")){
 			$showAllMode = $showAllMode =$this->getShowAllMode();
