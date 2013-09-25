@@ -4,8 +4,8 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 
 	protected $itemClass = 'GridFieldPaginatorWithShowAll_Row';
 
-	public function getTemplateData($gridField){
-		$data = parent::getTemplateData($gridField);
+	public function getTemplateParameters(GridField $gridField){
+		$data = parent::getTemplateParameters($gridField);
 
 		//Inject Requirements
 		Requirements::css('gridfieldpaginatorwithshowall/css/GridFieldPaginatorWithShowAll.css');
@@ -36,7 +36,7 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 		$dataList = parent::getManipulatedData($gridField, $dataList);		
 		$showAllMode =$this->getShowAllMode();
 		if($showAllMode){
-			$dataList->limit(999, 0); 
+			$dataList = $dataList->limit(999, 0);
 			$component = $gridField->getConfig()->getComponentByType('GridFieldPaginatorWithShowAll');
 			$component->setItemsPerPage(1+$dataList->count());
 		}
