@@ -36,7 +36,7 @@ class GridFieldPaginatorWithShowAll extends GridFieldPaginator {
 		$dataList = parent::getManipulatedData($gridField, $dataList);		
 		$showAllMode =$this->getShowAllMode();
 		if($showAllMode){
-			$dataList->limit(999, 0); 
+			$dataList = $dataList->limit(999, 0);
 			$component = $gridField->getConfig()->getComponentByType('GridFieldPaginatorWithShowAll');
 			$component->setItemsPerPage(1+$dataList->count());
 		}
