@@ -1,0 +1,17 @@
+{
+	"name": "normann/gridfieldpaginatorwithshowall",
+	"description": "A GridField paginator with a show all checkbox",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "gridfield"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Normann Lou",
+			"homepage": "https://github.com/normann"
+		}
+	],
+	"require": {
+		"composer/installers": "*",
+		"silverstripe/framework": "~3.1"
+	}
+}
